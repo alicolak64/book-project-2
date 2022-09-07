@@ -4,7 +4,6 @@ import BookList from './BookList';
 
 function App() {
 
-
   const [books, setBooks] = useState([
     {
       title: "Kırmızı Pazartesi",
