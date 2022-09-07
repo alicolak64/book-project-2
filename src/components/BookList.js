@@ -1,17 +1,25 @@
+import React from 'react'
+
 import './BookList.css';
 import Book from './Book';
 
-import React from 'react'
+import BookContext from '../contexts/BookContext';
+
 
 function BookList(props) {
 
-    // console.log(this.props.books)
+    const books = BookContext._currentValue
 
-    const bookList = props.books.map((book, i) => {
+    // console.log(BookContext)
+
+    // console.log(books)
+
+    const bookList = books.map((book, i) => {
         return <Book book={book}
             key={i}
         />
     })
+
 
     return (
 
@@ -19,7 +27,7 @@ function BookList(props) {
             <div className="container">
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">BookFolio</h2>
-                    <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 className="section-subheading text-muted">My BookFolio.</h3>
                 </div>
                 <div className="row">
 
