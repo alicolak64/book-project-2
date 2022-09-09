@@ -6,6 +6,8 @@ export const ThemeContext = React.createContext();
 
 function ThemeContextProvider(props) {
 
+
+
     const [theme, setTheme] = useState(
         {
             isDarkTheme: true,
@@ -14,8 +16,12 @@ function ThemeContextProvider(props) {
         }
     );
 
+    const changeTheme = () => {
+        setTheme({ ...theme, isDarkTheme: !theme.isDarkTheme });
+    }
+
     return (
-        <ThemeContext.Provider value={{ ...theme }}>
+        <ThemeContext.Provider value={{ ...theme , changeTheme : changeTheme } } >
             {props.children}
         </ThemeContext.Provider>
     )

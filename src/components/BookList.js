@@ -9,6 +9,9 @@ import { ThemeContext } from '../contexts/ThemeContext';
 
 function BookList(props) {
 
+
+
+
     return (
 
         <ThemeContext.Consumer>
@@ -19,11 +22,11 @@ function BookList(props) {
 
                 <BookContext.Consumer>
 
-                    
+
 
                     {(bookContext) => {
 
-                        const { isDarkTheme, dark, light } = themeContext;
+                        const { isDarkTheme, dark, light, changeTheme } = themeContext;
                         const theme = isDarkTheme ? dark : light;
 
                         const { books } = bookContext;
@@ -33,11 +36,19 @@ function BookList(props) {
 
                         return (
 
-                            <section className="page-section" style={{background: theme.bg, color:theme.txt}} id="portfolio">
+                            <section className="page-section" style={{ background: theme.bg, color: theme.txt }} id="portfolio">
                                 <div className="container">
                                     <div className="text-center">
                                         <h2 className="section-heading text-uppercase">BookFolio</h2>
                                         <h3 className="section-subheading text-muted">My BookFolio.</h3>
+                                        <button
+                                            type = 'button'
+                                            style = {{ marginTop: "-70px" }}
+                                            className = 'btn btn-sm btn-info'
+                                            onClick={changeTheme}
+                                            >
+                                            Change Theme
+                                        </button>
                                     </div>
                                     <div className="row">
 
